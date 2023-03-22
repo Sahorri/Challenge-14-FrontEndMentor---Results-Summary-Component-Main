@@ -95,6 +95,11 @@ a {
   font-size: 1.8rem;
 }
 
+a:hover {
+  background-color: var(--Light-royal-blue);
+  cursor: pointer;
+}
+
 li {
   max-width: 80%;
   margin: 1.5rem auto;
