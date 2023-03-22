@@ -1,0 +1,241 @@
+/************************ CSS RESETS *****************************/
+
+/* 1. Reset margin/padding + Border-Box Model */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Améliorer le rendu du texte */
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 3. Améliorer les média par défaut car (img = par défaut inline) => Responsive */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 4. Supprimer le style de typo de base */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 5. Eviter l'overflow des textes même avec des petites viewport */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*********************** GENERAL CSS ****************************/
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  /*COLORS*/
+  --Light-slate-blue: hsl(252, 100%, 67%);
+  --Light-royal-blue: hsl(241, 81%, 54%);
+  --Violet-blue: hsla(256, 72%, 46%, 1);
+  --Persian-blue: hsla(241, 72%, 46%, 0);
+  --White: hsl(0, 0%, 100%);
+  --Pale-blue: hsl(221, 100%, 96%);
+  --Light-lavender: hsl(241, 100%, 89%);
+  --Dark-gray-blue: hsl(224, 30%, 27%);
+  /*FONTS*/
+  font-family: "Hanken Grotesk", sans-serif;
+  --ff-medium: 500;
+  --ff-bold: 700;
+  --ff-extra-bold: 800;
+  font-size: 1.6rem;
+  /*GENERAL*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  min-width: 400px;
+}
+
+.results {
+  background: linear-gradient(hsl(241, 81%, 54%), hsla(256, 72%, 46%, 1));
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--White);
+  background-color: var(--Dark-gray-blue);
+  border-radius: 30px;
+  display: block;
+  text-align: center;
+  width: 80%;
+  margin: 4rem auto;
+  padding: 1.8rem 0;
+  font-size: 1.8rem;
+}
+
+li {
+  max-width: 80%;
+  margin: 1.5rem auto;
+  padding: 1.8rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px;
+}
+
+/********************* CSS RESULTS *********************/
+
+.results {
+  text-align: center;
+  border-radius: 0 0 30px 30px;
+  background: linear-gradient(
+    180deg,
+    var(--Light-slate-blue) 0%,
+    var(--Light-royal-blue) 100%
+  );
+}
+
+.results h2 {
+  color: var(--Light-lavender);
+  padding: 2rem 0;
+  font-size: 1.8rem;
+}
+
+.results h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.results-results {
+  max-width: 60%;
+  margin: auto;
+  color: var(--Light-lavender);
+  padding-bottom: 3rem;
+}
+
+.score {
+  border-radius: 300px;
+  background: linear-gradient(
+    180deg,
+    var(--Violet-blue) 0%,
+    var(--Persian-blue) 100%
+  );
+  max-width: 150px;
+  padding: 0.8rem;
+  margin: auto;
+}
+
+.score-results {
+  font-size: 6rem;
+  color: white;
+}
+
+.score-results-total {
+  color: var(--Light-lavender);
+}
+
+/********************** CSS SUMMARY *************************/
+
+.summary h2 {
+  color: var(--Dark-gray-blue);
+  max-width: 80%;
+  margin: auto;
+  padding: 2rem 0;
+  font-size: 2rem;
+}
+
+.reaction {
+  color: red;
+  background-color: hsla(360, 100%, 50%, 0.05);
+}
+
+.memory {
+  color: hsl(41, 72%, 54%);
+  background-color: hsla(63, 100%, 50%, 0.05);
+}
+
+.verbal {
+  color: green;
+  background-color: hsla(120, 100%, 50%, 0.05);
+}
+
+.visual {
+  color: blue;
+  background-color: hsla(240, 100%, 50%, 0.05);
+}
+
+.total {
+  color: gray;
+}
+
+.score-summary {
+  color: var(--Dark-gray-blue);
+  font-weight: var(--ff-extra-bold);
+}
+
+.state-icon {
+  display: inline;
+  vertical-align: middle;
+}
+
+/**************** CSS MEDIA QUERIES ****************/
+
+@media screen and (min-width: 600px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    margin: 20rem auto;
+  }
+
+  .results {
+    border-radius: 30px;
+    width: 350px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .summary {
+    width: 350px;
+    border-radius: 0 30px 30px 0;
+    box-shadow: hsl(221, 100%, 96%) 5px 5px 12px;
+    position: relative;
+    z-index: -1;
+  }
+
+  .score {
+    max-width: 200px;
+    padding: 3.5rem;
+  }
+
+  li {
+    padding: 1rem 2rem;
+  }
+
+  a {
+    padding: 1rem 0;
+  }
+}
